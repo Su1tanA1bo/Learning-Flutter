@@ -157,24 +157,65 @@ import 'package:flutter/material.dart';
 
 
 void main (){
-runApp(new MaterialApp(
-  home:
-));
+runApp(MaterialApp(
+  home: HomePage(),
+  routes: <String, WidgetBuilder>{ //routes : <here we will define the route, where and how to build the page in terms of BuildContext)
+    "/SecondPage" : (BuildContext context) => SecondPage()
+    //here we will add more pages if we had some
+  }
+)
+);
 }
 
 class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return new Scaffold(
-      appBar: new AppBar(title: new Text("Home"), backgroundColor: Colors.deepOrange),
-      body: new Container(
-        child: new Center(
-          child: new Column(
+    return Scaffold(
+      appBar: AppBar(title: Text("Home"), backgroundColor: Colors.deepOrange),
+      body: Container(
+        child:  Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new IconButton()
-            ])
+               IconButton(
+                icon:  Icon(
+                  Icons.audiotrack, 
+                  color: Colors.blue),
+                  iconSize: 70.0,
+                  onPressed: () {Navigator.of(context).pushNamed("/SecondPage");}
+              ),
+               Text("Home")
+            ]
+            )
         )
       )
     );
   }
 }
+
+class SecondPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar:  AppBar(title: Text("Home"), backgroundColor: Colors.deepOrange),
+      body: Container(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home, 
+                  color: Colors.red),
+                  iconSize: 70.0,
+                  onPressed: null
+              ),
+              Text("Home")
+            ]
+            )
+        )
+      )
+    );
+  }
+}
+

@@ -98,56 +98,83 @@ import 'package:flutter/material.dart';
 
 //Stateful Widgets
 
-void main(){
-  runApp(
-    new MaterialApp(
-      home: CustomButton()
-    )
-  );
+// void main(){
+//   runApp(
+//     new MaterialApp(
+//       home: CustomButton()
+//     )
+//   );
+// }
+
+// class CustomButton extends StatefulWidget{
+//   @override
+//   CustomButtonState createState() => CustomButtonState();
+// }
+
+// class CustomButtonState extends State<CustomButton>{
+//   //2 formats shown below. first one is better used for understanding 
+//   //int counter = 0;
+//   //List<String> strings = ["I", "need", "Something"];
+//   var counter = 0;
+//   var strings = ["Stronger", "Better", "Faster"];
+//   String currentString = "";
+
+//   void onPressed(){
+//     setState(() {
+//       currentString = strings[counter];
+//       counter = counter < 2 ? counter + 1 : 0;
+//     });
+//   }
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Stateful Widget"), backgroundColor: Colors.grey.shade900),
+//       body: Container(
+//         child: Center(
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: <Widget>[
+//               Text(currentString, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+//               Padding(padding: EdgeInsets.all(100)),
+//               ElevatedButton(
+//                 child: Text("Press me", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic)),
+//                 style: ElevatedButton.styleFrom(
+//                   primary: Colors.grey.shade900
+//                 ),
+//                 onPressed: onPressed,
+
+//                 )
+//             ]
+//           )
+//           )
+//         ),
+//     );
+//   }
+// }
+
+
+//Navigation and routes
+
+
+void main (){
+runApp(new MaterialApp(
+  home:
+));
 }
 
-class CustomButton extends StatefulWidget{
-  @override
-  CustomButtonState createState() => CustomButtonState();
-}
-
-class CustomButtonState extends State<CustomButton>{
-  //2 formats shown below. first one is better used for understanding 
-  //int counter = 0;
-  //List<String> strings = ["I", "need", "Something"];
-  var counter = 0;
-  var strings = ["Stronger", "Better", "Faster"];
-  String currentString = "";
-
-  void onPressed(){
-    setState(() {
-      currentString = strings[counter];
-      counter = counter < 2 ? counter + 1 : 0;
-    });
-  }
+class HomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
-    return Scaffold(
-      appBar: AppBar(title: Text("Stateful Widget"), backgroundColor: Colors.grey.shade900),
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+    return new Scaffold(
+      appBar: new AppBar(title: new Text("Home"), backgroundColor: Colors.deepOrange),
+      body: new Container(
+        child: new Center(
+          child: new Column(
             children: <Widget>[
-              Text(currentString, style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-              Padding(padding: EdgeInsets.all(100)),
-              ElevatedButton(
-                child: Text("Press me", style: TextStyle(color: Colors.white, fontStyle: FontStyle.italic)),
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.grey.shade900
-                ),
-                onPressed: onPressed,
-
-                )
-            ]
-          )
-          )
-        ),
+              new IconButton()
+            ])
+        )
+      )
     );
   }
 }
